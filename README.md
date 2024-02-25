@@ -10,7 +10,7 @@ The banking environment is competitive and traditionally rigid. Our objective is
 ### Modelling Context
 Classification Models: We predict the likelihood of a client subscribing to a term deposit, focusing on those with the highest likelihood to convert. This approach helps in personalizing marketing efforts and reducing costs. Our goal for our predictive classification is to predict client subscription to term deposits.
 
-Clustering Models: We segment the bank's clients based on various characteristics, allowing for tailored marketing strategies that are more effective in engaging distinct client groups. Our degmentation goal is to identify distinct client segments for targeted marketing.
+Clustering Models: We segment the bank's clients based on various characteristics, allowing for tailored marketing strategies that are more effective in engaging distinct client groups. Our segmentation goal is to identify distinct client segments for targeted marketing.
 
 ### Hypotheses
 *"Classification techniques will accurately predict subscription likelihood based on client traits and previous campaign interactions."*
