@@ -1,6 +1,13 @@
 # INSY 695 Final Project
 ## Group 3: Fourchetteurs
 
+Files:
+- Clustering models: contains exploratory codes for clustering model selection and tuning
+- Classification models: contains exploratory code for classification model selection and tuning
+- Dataset: bank_marketing_dataset.csv
+- Presentation slides.pptx
+- EDA_V2_Preprocessing-pipelines.ipynb preprocessing used for classification models
+
 ### Project Overview
 This project aims to enhance the effectiveness of direct marketing campaigns for banks using machine learning. By leveraging a dataset from the University of California Irvine’s Machine Learning Repository, we explored innovative strategies to attract new clients and retain existing ones, transitioning from traditional to data-driven marketing approaches.
 
