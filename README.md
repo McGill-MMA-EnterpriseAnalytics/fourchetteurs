@@ -9,6 +9,15 @@ Files:
 - EDA_V2_Preprocessing-pipelines.ipynb: preprocessing used for classification models
 - Final_code.ipynb: contains the results of the best models only for both clustering and classification
 
+Data source: https://www.kaggle.com/datasets/berkayalan/bank-marketing-data-set
+
+### Team Members
+- Dhevin De Silva
+- Keani Schuller
+- Olivier Larochelle
+- Tiffany Lagarde
+- Valentin Najean
+
 ### Project Overview
 This project aims to enhance the effectiveness of direct marketing campaigns for banks using machine learning. By leveraging a dataset from the University of California Irvine’s Machine Learning Repository, we explored innovative strategies to attract new clients and retain existing ones, transitioning from traditional to data-driven marketing approaches.
 
