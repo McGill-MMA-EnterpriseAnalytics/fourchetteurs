@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Park/fourchetteurs/mlruns/0/dfe9df785af042ac866692a3b7fcbc71/artifacts
+end_time: 1713940804274
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: dfe9df785af042ac866692a3b7fcbc71
+run_name: flawless-quail-388
+run_uuid: dfe9df785af042ac866692a3b7fcbc71
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713940794159
+status: 3
+tags: []
+user_id: Park

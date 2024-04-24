@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Park/fourchetteurs/mlruns/0/f8d5d9d633bd475aa4f8eb9f96b10c92/artifacts
+end_time: 1713939182494
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f8d5d9d633bd475aa4f8eb9f96b10c92
+run_name: enthused-snake-952
+run_uuid: f8d5d9d633bd475aa4f8eb9f96b10c92
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713939128992
+status: 3
+tags: []
+user_id: Park

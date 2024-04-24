@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Park/fourchetteurs/mlruns/0/15996c8f86f44ceb9312c3e56c67a6fb/artifacts
+end_time: 1713940626783
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 15996c8f86f44ceb9312c3e56c67a6fb
+run_name: suave-ray-54
+run_uuid: 15996c8f86f44ceb9312c3e56c67a6fb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713940618524
+status: 3
+tags: []
+user_id: Park
