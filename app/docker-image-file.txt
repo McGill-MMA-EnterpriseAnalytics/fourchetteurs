@@ -1,0 +1,17 @@
+FROM ubuntu:latest AS ml_code
+
+RUN apt-get update && \
+    apt-get install -y git
+
+    RUN mkdir /app && \
+    cd /app && \
+    git clone https://github.com/username/test.git
+
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.11 as base_image
+
+FROM base_image AS train
+COPY --from=ml_code /app/requirements.txt .
+RUN pip install -r requirements.txt
+COPY --from=ml_code /app/train.py /app/train.py
+RUN python3 /app/train.py
+
