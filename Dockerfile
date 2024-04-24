@@ -19,6 +19,7 @@ FROM base_image
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY --from=train /app/predictions.pkl .
-COPY main-v0.py /app/main-v0.py
+COPY app/main-v0.py /app/main-v0.py
+
     
 
