@@ -5,7 +5,7 @@ RUN apt-get update && \
 
     RUN mkdir /app && \
     cd /app && \
-    git clone https://github.com/McGill-MMA-EnterpriseAnalytics/fourchetteurs.git
+    git clone -b Deep-Learning-Clustering https://github.com/McGill-MMA-EnterpriseAnalytics/fourchetteurs.git
 
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.11 as base_image
 
