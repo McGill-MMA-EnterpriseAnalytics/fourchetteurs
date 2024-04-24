@@ -26,3 +26,4 @@ COPY --from=ml_code /app/fourchetteurs/app/main-v0.py /app/main-v0.py
     
 EXPOSE 8000
 EXPOSE 80
+CMD ["uvicorn", "main-v0:app", "--host", "0.0.0.0", "--port", "80"]
