@@ -62,6 +62,6 @@ pipeline.fit(X_train, y_train)
 print("Training complete. Model accuracy:", pipeline.score(X_test, y_test))
 
 # Save the pipeline
-joblib.dump(pipeline, 'xgb_model_trained.pkl')
+joblib.dump(pipeline, '/app/xgb_model_trained.pkl')
 
 print(X_train.columns)

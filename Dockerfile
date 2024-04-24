@@ -5,21 +5,23 @@ RUN apt-get update && \
 
     RUN mkdir /app && \
     cd /app && \
-    git clone -b Deep-Learning-Clustering https://github.com/McGill-MMA-EnterpriseAnalytics/fourchetteurs.git
+    git clone -b Deep-Learing-Clustering https://github.com/McGill-MMA-EnterpriseAnalytics/fourchetteurs.git
 
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.11 as base_image
 
 FROM base_image AS train
-COPY --from=ml_code /app/requirements.txt .
+COPY --from=ml_code /app/fourchetteurs/app/requirements.txt .
 RUN pip install -r requirements.txt
-COPY --from=ml_code /app/train-v0.py /app/train-v0.py
+COPY --from=ml_code /app/fourchetteurs/app/train-v0.py /app/train-v0.py
+# Copy the dataset into the container
+COPY --from=ml_code /app/fourchetteurs/app/bank_marketing_dataset.csv /app/bank_marketing_dataset.csv
 RUN python3 /app/train-v0.py
+RUN ls -l /app/ 
 
 FROM base_image
-COPY requirements.txt .
+COPY --from=ml_code /app/fourchetteurs/app/requirements.txt .
 RUN pip install -r requirements.txt
-COPY --from=train /app/predictions.pkl .
-COPY app/main-v0.py /app/main-v0.py
-
+COPY --from=train /app/fourchetteurs/app/xgb_model_trained.pkl .
+COPY --from=ml_code /app/fourchetteurs/app/main-v0.py /app/main-v0.py
     
 
