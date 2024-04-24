@@ -9,6 +9,14 @@ model = joblib.load('xgb_model_trained.pkl')  # Ensure the model is loaded corre
 
 class PredictionInput(BaseModel):
     features: list  # List of lists, where each sublist is a set of features
+    class Config:
+        schema_extra = {
+            "example": {
+                "features": [[25, "admin.", "married", "high.school", "no", "yes", "no", "telephone", "jun", "mon", 2, 999, 1, "failure", 93.994, -36.4, 5191]]
+            }
+        }
+
+
 
 @app.post("/predict/")
 async def make_prediction(input: PredictionInput):

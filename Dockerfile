@@ -21,7 +21,7 @@ RUN ls -l /app/
 FROM base_image
 COPY --from=ml_code /app/fourchetteurs/app/requirements.txt .
 RUN pip install -r requirements.txt
-COPY --from=train /app/fourchetteurs/app/xgb_model_trained.pkl .
+COPY --from=train /app/xgb_model_trained.pkl /app/xgb_model_trained.pkl
 COPY --from=ml_code /app/fourchetteurs/app/main-v0.py /app/main-v0.py
     
 
