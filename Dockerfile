@@ -24,4 +24,5 @@ RUN pip install -r requirements.txt
 COPY --from=train /app/xgb_model_trained.pkl /app/xgb_model_trained.pkl
 COPY --from=ml_code /app/fourchetteurs/app/main-v0.py /app/main-v0.py
     
-
+EXPOSE 8000
+EXPOSE 80
