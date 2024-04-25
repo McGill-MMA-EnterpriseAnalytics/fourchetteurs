@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Park/fourchetteurs/mlruns/0/1eb038a8d92e43c492c56a80b5d878f1/artifacts
+end_time: 1713936553864
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1eb038a8d92e43c492c56a80b5d878f1
+run_name: skillful-shoat-434
+run_uuid: 1eb038a8d92e43c492c56a80b5d878f1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713935773838
+status: 3
+tags: []
+user_id: Park
