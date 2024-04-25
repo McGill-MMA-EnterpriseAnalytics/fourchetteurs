@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Park/fourchetteurs/mlruns/0/c68d2c3587de4642b6bf6ea87af1b906/artifacts
+end_time: 1713940685872
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c68d2c3587de4642b6bf6ea87af1b906
+run_name: sedate-hog-434
+run_uuid: c68d2c3587de4642b6bf6ea87af1b906
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713940677574
+status: 3
+tags: []
+user_id: Park
