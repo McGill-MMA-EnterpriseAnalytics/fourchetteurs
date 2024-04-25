@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Park/fourchetteurs/mlruns/0/6ce1de4fa4ab49a08d71dc1ea0e5fea7/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6ce1de4fa4ab49a08d71dc1ea0e5fea7
+run_name: dapper-dolphin-697
+run_uuid: 6ce1de4fa4ab49a08d71dc1ea0e5fea7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713938442152
+status: 1
+tags: []
+user_id: Park

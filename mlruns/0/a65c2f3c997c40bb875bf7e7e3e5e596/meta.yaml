@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Park/fourchetteurs/mlruns/0/a65c2f3c997c40bb875bf7e7e3e5e596/artifacts
+end_time: 1713935763596
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a65c2f3c997c40bb875bf7e7e3e5e596
+run_name: indecisive-toad-327
+run_uuid: a65c2f3c997c40bb875bf7e7e3e5e596
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713935653637
+status: 3
+tags: []
+user_id: Park
