@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1714124396237
+current_stage: None
+description: ''
+last_updated_timestamp: 1714124396237
+name: xgb_classification
+run_id: 438d0b5d06d84663958ca4082956959e
+run_link: ''
+source: file:///c:/Users/Park/fourchetteurs/mlruns/954693324383087299/438d0b5d06d84663958ca4082956959e/artifacts/xgb_classification
+status: READY
+status_message: null
+storage_location: file:///c:/Users/Park/fourchetteurs/mlruns/954693324383087299/438d0b5d06d84663958ca4082956959e/artifacts/xgb_classification
+user_id: null
+version: 1
