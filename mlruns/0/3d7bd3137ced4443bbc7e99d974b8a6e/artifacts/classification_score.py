@@ -3,6 +3,8 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 from sklearn.model_selection import cross_val_score
 from matplotlib import pyplot as plt
 from sklearn.metrics import ConfusionMatrixDisplay
+import mlflow
+
 
 # ROC curve
 def plot_roc_curve(fpr, tpr, roc_auc):
@@ -14,7 +16,10 @@ def plot_roc_curve(fpr, tpr, roc_auc):
     plt.ylim([0, 1])
     plt.ylabel('True Positive Rate')
     plt.xlabel('False Positive Rate')
+    plt.savefig('roc_curve.png')
     plt.show()
+    plt.close()
+    
 
 # PR curve
 def plot_pr_curve(precision, recall, average_precision):
@@ -25,9 +30,23 @@ def plot_pr_curve(precision, recall, average_precision):
     plt.ylim([0.0, 1.05])
     plt.xlim([0.0, 1.0])
     plt.title('2-class Precision-Recall curve: AP={0:0.2f}'.format(average_precision))
+    plt.savefig('pr_curve.png')
     plt.show()
+    plt.close()
+    
 
+def confusion_matrix_plot(clf, X_val, y_val):
 
+    ConfusionMatrixDisplay.from_estimator(clf, X_val, y_val)
+    plt.title('Confusion Matrix')
+    plt.savefig('confusion_matrix.png')
+    plt.show()
+    plt.close() 
+    
+    
+
+        
+        
 # Classification score
 def clf_score(clf, X_train, y_train, X_val, y_val, train=True):
     if train:
@@ -54,15 +73,21 @@ def clf_score(clf, X_train, y_train, X_val, y_val, train=True):
         precision, recall, _ = precision_recall_curve(y_val, clf.predict(X_val))
         average_precision = average_precision_score(y_val, clf.predict(X_val))
         plot_pr_curve(precision, recall, average_precision)
+        mlflow.log_artifact('pr_curve.png', artifact_path='pr_curve.png')
+        
         
         fpr, tpr, _ = roc_curve(y_val, clf.predict(X_val))
         roc_auc = roc_auc_score(y_val, clf.predict(X_val))
         print("roc auc score: {}\n".format(roc_auc))
         plot_roc_curve(fpr, tpr, roc_auc)
+        mlflow.log_artifact('roc_curve.png', artifact_path='roc_curve.png')
+        
         
         print("Classification Report: \n {}\n".format(classification_report(y_val, clf.predict(X_val))))
         print("Confusion Matrix: \n {}\n".format(confusion_matrix(y_val, clf.predict(X_val))))
-        ConfusionMatrixDisplay.from_estimator(clf, X_val, y_val)
+        confusion_matrix_plot(clf, X_val, y_val)
+        mlflow.log_artifact('confusion_matrix.png', artifact_path='confusion_matrix.png')
+
         print("End of validation Result\n")
         mlflow.log_metric("validation_accuracy", validation_accuracy)
         mlflow.log_metric("average_precision", average_precision)
