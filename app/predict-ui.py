@@ -4,7 +4,8 @@ import requests
 
 # Function to send requests to FastAPI
 def send_request(data):
-    url = 'http://localhost:8000/predict/'  # Adjust the URL based on your setup
+    # url = 'http://localhost:8000/predict/'  # Adjust the URL based on your setup
+    url = 'http://host.docker.internal:8000/predict/'  # for docker windows
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, json=data)
     return response.json()
