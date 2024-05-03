@@ -94,3 +94,16 @@ def clf_score(clf, X_train, y_train, X_val, y_val, train=True):
         mlflow.log_metric("roc_auc", roc_auc)
         
         
+def evaluation_metrics(y_actual, y_pred):
+            
+        precision, recall, _ = precision_recall_curve(y_actual, y_pred)
+        average_precision = average_precision_score(y_actual, y_pred)
+        plot_pr_curve(precision, recall, average_precision)
+        
+        fpr, tpr, _ = roc_curve(y_actual, y_pred)
+        roc_auc = roc_auc_score(y_actual, y_pred)
+        print("roc auc score: {}\n".format(roc_auc))
+        plot_roc_curve(fpr, tpr, roc_auc)
+        
+        print("Classification Report: \n {}\n".format(classification_report(y_actual, y_pred)))
+        print("Confusion Matrix: \n {}\n".format(confusion_matrix(y_actual, y_pred)))
