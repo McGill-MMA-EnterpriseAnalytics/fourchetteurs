@@ -14,5 +14,5 @@ COPY --from=ml_code /app/fourchetteurs/app/requirements.txt .
 COPY --from=ml_code /app/fourchetteurs/app/predict-ui.py .
 RUN pip install -r requirements.txt
 
-EXPOSE 8501
-CMD ["streamlit", "run", "predict-ui.py"]
+EXPOSE 80
+CMD ["streamlit", "run", "predict-ui.py", "--server.port", "80"]
