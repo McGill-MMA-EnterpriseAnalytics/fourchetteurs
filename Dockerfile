@@ -30,7 +30,7 @@ CMD ["uvicorn", "main-v0:app", "--host", "0.0.0.0", "--port", "80"]
 # Streamlit deployment stage: setup Streamlit application
 FROM base_image AS streamlit_deployment
 COPY --from=train /app/xgb_model_trained.pkl /app/
-COPY --from=ml_code /app/fourchetteurs/app/predict_streamlit.py /app/
+COPY --from=ml_code /app/fourchetteurs/app/predict_streamlit.py /app/predict_streamlit.py
 WORKDIR /app
 EXPOSE 8501
 CMD ["streamlit", "run", "predict_streamlit.py"]
