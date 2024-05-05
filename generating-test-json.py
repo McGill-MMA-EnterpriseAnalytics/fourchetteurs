@@ -22,3 +22,6 @@ json_test_data = json.dumps({"features": X_train_transformed_df.values.tolist()}
 # Save the json file
 with open('to predict/test_data.json', 'w') as f:
     f.write(json_test_data)
+
+# Save as csv also:
+X_train_transformed_df.to_csv('to predict/test_data.csv', index=False)
