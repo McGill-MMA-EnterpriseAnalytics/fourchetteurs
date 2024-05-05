@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Park/fourchetteurs/mlruns/954693324383087299/344ad0d24f57410e9141949102fd1a1c/artifacts
+end_time: 1714121951237
+entry_point_name: ''
+experiment_id: '954693324383087299'
+lifecycle_stage: active
+run_id: 344ad0d24f57410e9141949102fd1a1c
+run_name: gregarious-fox-679
+run_uuid: 344ad0d24f57410e9141949102fd1a1c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714121136428
+status: 3
+tags: []
+user_id: Park
