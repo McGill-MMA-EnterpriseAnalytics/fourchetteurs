@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Park/fourchetteurs/mlruns/0/48ab8c4d0fb1455fb31ea415592e3850/artifacts
+end_time: 1713941349150
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 48ab8c4d0fb1455fb31ea415592e3850
+run_name: unleashed-bug-295
+run_uuid: 48ab8c4d0fb1455fb31ea415592e3850
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713941341579
+status: 3
+tags: []
+user_id: Park

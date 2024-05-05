@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Park/fourchetteurs/mlruns/0/f5779deb0a424463a7f60793f7467f62/artifacts
+end_time: 1713940946223
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f5779deb0a424463a7f60793f7467f62
+run_name: unruly-koi-752
+run_uuid: f5779deb0a424463a7f60793f7467f62
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713940912132
+status: 3
+tags: []
+user_id: Park

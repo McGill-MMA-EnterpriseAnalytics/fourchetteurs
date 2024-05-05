@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Park/fourchetteurs/mlruns/954693324383087299/96f9e6772404413c93da80ab42c94999/artifacts
+end_time: 1714001992967
+entry_point_name: ''
+experiment_id: '954693324383087299'
+lifecycle_stage: active
+run_id: 96f9e6772404413c93da80ab42c94999
+run_name: monumental-carp-152
+run_uuid: 96f9e6772404413c93da80ab42c94999
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714001906365
+status: 3
+tags: []
+user_id: Park

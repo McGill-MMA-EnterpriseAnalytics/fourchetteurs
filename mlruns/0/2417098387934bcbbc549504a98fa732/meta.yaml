@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Park/fourchetteurs/mlruns/0/2417098387934bcbbc549504a98fa732/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2417098387934bcbbc549504a98fa732
+run_name: abundant-lynx-33
+run_uuid: 2417098387934bcbbc549504a98fa732
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713940065209
+status: 1
+tags: []
+user_id: Park
