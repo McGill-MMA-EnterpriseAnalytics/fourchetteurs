@@ -1,0 +1,18 @@
+FROM ubuntu:latest AS ml_code
+
+WORKDIR /app
+
+RUN apt-get update && \
+    apt-get install -y git
+
+RUN git clone -b Deep-Learing-Clustering https://github.com/McGill-MMA-EnterpriseAnalytics/fourchetteurs.git
+
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.11 as base_image
+
+
+COPY --from=ml_code /app/fourchetteurs/app/requirements.txt .
+COPY --from=ml_code /app/fourchetteurs/app/predict-ui.py .
+RUN pip install -r requirements.txt
+
+EXPOSE 80
+CMD ["streamlit", "run", "predict-ui.py", "--server.port", "80"]
