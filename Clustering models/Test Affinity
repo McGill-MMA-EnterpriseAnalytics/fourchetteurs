@@ -1,0 +1,98 @@
+
+#Data Loading and Initial Exploration
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+
+# Configure pandas to display all columns
+pd.set_option("display.max_columns", None)
+
+# Load the dataset
+df_cluster = pd.read_csv('bank_marketing_dataset.csv')
+
+# **Data Pre-Processing**
+
+# Identifying numerical and categorical columns
+numerical_cols = df_cluster.select_dtypes(include=['int64', 'float64']).columns
+categorical_cols = df_cluster.select_dtypes(include=['object']).columns
+
+# Dropping irrelevant columns
+df_cluster = df_cluster.drop(columns=['nr.employed', 'emp.var.rate'])
+
+# Updating numerical columns after dropping irrelevant ones
+numerical_cols = df_cluster.select_dtypes(include=['int64', 'float64']).columns
+
+# Create a copy of the preprocessed data
+X_preprocessed_df = df_cluster.copy()
+
+# Log transforming the 'duration' column
+X_preprocessed_df['duration'] = np.log1p(df_cluster['duration'])
+
+# Standardizing numerical features
+scaler = StandardScaler()
+X_preprocessed_df[numerical_cols] = scaler.fit_transform(X_preprocessed_df[numerical_cols])
+
+# One-hot encoding categorical features
+encoder = OneHotEncoder(handle_unknown='ignore', sparse_output=False)
+X_cat_encoded = pd.DataFrame(encoder.fit_transform(X_preprocessed_df[categorical_cols]),
+                             columns=encoder.get_feature_names_out(categorical_cols),
+                             index=X_preprocessed_df.index)
+
+# Creating a copy of the preprocessed data before one-hot encoding
+X_no_encoded = X_preprocessed_df.copy()
+
+# Dropping original categorical columns
+X_preprocessed_df.drop(columns=categorical_cols, inplace=True)
+
+# Concatenating one-hot encoded categorical features with preprocessed data
+X_preprocessed_df = pd.concat([X_preprocessed_df, X_cat_encoded], axis=1)
+
+# Display the shape of the preprocessed data
+print(X_preprocessed_df.shape)
+
+# Display the head of the preprocessed data
+X_preprocessed_df.head()
+
+# Extracting continuous data for clustering
+prefixes = ['job_', 'marital_', 'education_', 'default_', 'housing_', 'loan_', 'contact_', 'month_', 'day_of_week_', 'poutcome_', 'subscribed_']
+one_hot_cols = [col for col in X_preprocessed_df.columns if any(col.startswith(prefix) for prefix in prefixes)]
+continuous_data = X_preprocessed_df.drop(columns=one_hot_cols, axis=1)
+
+# **Affinity Propagation Clustering**
+
+from sklearn.cluster import AffinityPropagation
+from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
+
+# Initialize Affinity Propagation clustering model
+affinity_propagation = AffinityPropagation(damping=0.5, preference=None, max_iter=200, convergence_iter=15, copy=True, affinity='euclidean', verbose=False)
+
+# Fit the clustering model to preprocessed data
+affinity_propagation.fit(X_preprocessed_df)
+
+# Predict cluster labels for the data
+pred_labels = affinity_propagation.labels_
+
+# Evaluate clustering performance using silhouette score
+silhouette = silhouette_score(X_preprocessed_df, pred_labels)
+print("Silhouette Score:", silhouette)
+
+# Evaluate clustering performance using Calinski Harabasz score
+calinski_harabasz = calinski_harabasz_score(X_preprocessed_df, pred_labels)
+print("Calinski Harabasz Score:", calinski_harabasz)
+
+# Evaluate clustering performance using Davies Bouldin score
+davies_bouldin = davies_bouldin_score(X_preprocessed_df, pred_labels)
+print("Davies Bouldin Score:", davies_bouldin)
+
+# Visualize clusters if the data is 2D (using PCA)
+if X_preprocessed_df.shape[1] == 2:
+    plt.scatter(X_preprocessed_df.iloc[:, 0], X_preprocessed_df.iloc[:, 1], c=pred_labels, cmap='viridis')
+    plt.title('Affinity Propagation Clustering Results')
+    plt.xlabel('Feature 1')
+    plt.ylabel('Feature 2')
+    plt.colorbar(label='Cluster')
+    plt.show()
+```

@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Park/fourchetteurs/mlruns/954693324383087299/2e5819a290d649968f601b3f2c797ae0/artifacts
+end_time: 1714002066049
+entry_point_name: ''
+experiment_id: '954693324383087299'
+lifecycle_stage: active
+run_id: 2e5819a290d649968f601b3f2c797ae0
+run_name: treasured-conch-139
+run_uuid: 2e5819a290d649968f601b3f2c797ae0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714002017463
+status: 3
+tags: []
+user_id: Park
