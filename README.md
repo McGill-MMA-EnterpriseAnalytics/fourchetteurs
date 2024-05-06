@@ -3,9 +3,16 @@
 
 Data source: https://www.kaggle.com/datasets/berkayalan/bank-marketing-data-set
 
-### Team Members
+### Team Members (Enterprise 1)
 - Dhevin De Silva
 - Keani Schuller
+- Olivier Larochelle
+- Tiffany Lagarde
+- Valentin Najean
+
+### Team Members (Enterprise 2)
+- Vincent El-Ghoubaira
+- Seunghyun Park
 - Olivier Larochelle
 - Tiffany Lagarde
 - Valentin Najean
